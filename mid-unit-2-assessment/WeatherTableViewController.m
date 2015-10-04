@@ -14,8 +14,6 @@
 
 @property (nonatomic) WeatherData *allData;
 
-//@property (nonatomic) NSDictionary *weatherDictionary;
-
 @end
 
 @implementation WeatherTableViewController
@@ -51,6 +49,8 @@
     cell.textLabel.text = weatherData[@"summary"];
     cell.detailTextLabel.text = [[NSDate dateWithTimeIntervalSince1970:[weatherData[@"time"] doubleValue]] description];
     
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
 }
 
@@ -68,43 +68,6 @@
     
     
 }
-
-//-(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
-//{
-//    if ([[segue identifier] isEqualToString:@"tableSegue"]){
-//        
-//        MODetailViewController *detailViewController = [[MODetailViewController alloc] init];
-//        
-//        NSIndexPath *selectedIndexPath = [self.monetiseTable indexPathForSelectedRow];
-//        int selectedIndexPathAsInteger = selectedIndexPath.row;
-//        
-//        NSDictionary *dictionaryToPass = [[NSDictionary alloc] initWithDictionary:[self.feedArray objectAtIndex:selectedIndexPathAsInteger]];
-//        
-//        NSLog(@"%@", dictionaryToPass);
-//        
-//        detailViewController.passedDictionary = dictionaryToPass;
-//    }
-//}
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    // Make sure we are dealing with the proper Segue
-//    if ([segue.identifier isEqualToString:@"mySegueID"]) // ALWAYS use identifiers for your Segues
-//    {
-//        // Setup the destination ViewController
-//        FirstViewController *vc = segue.destinationViewController;
-//        
-//        WeatherData *weatherDictionary = [[WeatherData alloc]init];
-//        
-//        self.weatherDictionary = self.allData;
-//        
-//        NSDictionary *weatherData = self.allData;
-//
-//        
-//        // Set the dictionary object property on the ChildViewController
-//        vc.newData = weatherDictionary;
-//    }
-//}
 
 - (NSString *)objectForIndexPath:(NSIndexPath *)indexPath {
    

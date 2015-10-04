@@ -31,10 +31,6 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    
-//    NSDictionary *weatherData = [WeatherData allData][indexPath.row];
-    
     SecondViewController *vc = segue.destinationViewController;
     vc.lastWeatherData = self.allWeatherData;
     

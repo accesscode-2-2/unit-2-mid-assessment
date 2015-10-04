@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelOne;
 @property (weak, nonatomic) IBOutlet UILabel *labelTwo;
 @property (weak, nonatomic) IBOutlet UILabel *labelThree;
-//@property (nonatomic) NSInteger number;
 
 @end
 
