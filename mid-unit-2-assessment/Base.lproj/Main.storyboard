@@ -150,8 +150,8 @@
                     </view>
                     <connections>
                         <outlet property="labelOne" destination="Oy3-3e-ad9" id="uZ9-5q-cn7"/>
-                        <outlet property="labelThree" destination="U4w-j1-6jx" id="zLi-1u-gJa"/>
-                        <outlet property="labelTwo" destination="7Ub-Gy-auZ" id="WJ6-DE-sgS"/>
+                        <outlet property="labelThree" destination="U4w-j1-6jx" id="hm1-xO-8fx"/>
+                        <outlet property="labelTwo" destination="7Ub-Gy-auZ" id="DF3-Zm-VD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxa-Bf-Q4h" userLabel="First Responder" sceneMemberID="firstResponder"/>

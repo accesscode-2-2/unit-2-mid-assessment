@@ -22,10 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    NSString *string = [NSString stringWithFormat:@"%@", number];
+    NSString *string = [NSString stringWithFormat:@"Sunrise Time: %@", [self.lastWeatherData objectForKey:@"sunriseTime"]];
+    NSString *stringTwo = [NSString stringWithFormat:@"Sunset Time: %@", [self.lastWeatherData objectForKey:@"sunsetTime"]];
+
     self.labelOne.text = [self.lastWeatherData objectForKey:@"summary"];
-    self.labelTwo.text = [self.lastWeatherData objectForKey:@"summary"];
-    self.labelThree.text = [self.lastWeatherData objectForKey:@"summary"];
+    self.labelTwo.text = string;
+    self.labelThree.text = stringTwo;
 
 }
 
