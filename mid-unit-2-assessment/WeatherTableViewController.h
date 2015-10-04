@@ -10,4 +10,6 @@
 
 @interface WeatherTableViewController : UITableViewController
 
+@property (nonatomic) NSString *weatherName;
+
 @end
