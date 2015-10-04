@@ -7,8 +7,12 @@
 //
 
 #import "WeatherTableViewController.h"
+#import "WeatherData.h"
+#import "FirstViewController.h"
 
 @interface WeatherTableViewController ()
+
+@property (nonatomic) WeatherData *allData;
 
 @end
 
@@ -17,29 +21,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
 }
+
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    
+    NSArray *keys = [WeatherData allData];
+
+    return keys.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<# CellIdentifier #> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeatherCell" forIndexPath:indexPath];
     
     NSDictionary *weatherData = [WeatherData allData][indexPath.row];
     cell.imageView.image = [UIImage imageNamed:[weatherData objectForKey:@"icon"]];
     cell.textLabel.text = weatherData[@"summary"];
     cell.detailTextLabel.text = [[NSDate dateWithTimeIntervalSince1970:[weatherData[@"time"] doubleValue]] description];
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
 }
-*/
+
+#pragma mark - Navigation
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    NSDictionary *weatherData = [WeatherData allData][indexPath.row];
+    
+    FirstViewController *vc = segue.destinationViewController;
+    vc.allWeatherData = weatherData;
+    
+    
+    
+}
+
+- (NSString *)objectForIndexPath:(NSIndexPath *)indexPath {
+   
+        NSArray *keys = [WeatherData allData];
+    
+        return keys[indexPath.row];
+    }
+
 
 
 @end
