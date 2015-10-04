@@ -10,6 +10,11 @@
 
 @interface WeatherData : NSObject
 
+@property (nonatomic) NSDictionary *name;
+@property (nonatomic) NSString *imageURLString;
+
+//-(UIImage *)image;
+
 + (NSArray *)allData;
 
 @end
