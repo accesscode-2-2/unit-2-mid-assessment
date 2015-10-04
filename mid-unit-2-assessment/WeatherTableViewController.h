@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherTableViewController : UITableViewController
-
+@property (nonatomic) NSString *weatherName;
 @end
