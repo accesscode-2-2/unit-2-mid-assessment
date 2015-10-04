@@ -10,6 +10,10 @@
 
 @implementation WeatherData
 
+//- (UIImage *)image {
+//    return [UIImage imageNamed:self.imageString];
+//}
+
 + (NSArray *)allData {
     NSArray *info = @[
                       @{
