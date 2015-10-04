@@ -10,6 +10,10 @@
 
 @implementation WeatherData
 
+
+
+
+
 + (NSArray *)allData {
     NSArray *info = @[
                       @{
