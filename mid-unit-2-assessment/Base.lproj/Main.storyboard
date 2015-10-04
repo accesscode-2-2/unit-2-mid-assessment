@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2eW-CM-Alr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2eW-CM-Alr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Weather-->
@@ -14,15 +15,19 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="apc-52-e9Y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="apc-52-e9Y">
                                 <rect key="frame" x="0.0" y="92" width="600" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="apc-52-e9Y" id="Ook-dK-m3R">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="CellIdentifier"/>
+                                <connections>
+                                    <segue destination="zmj-lN-K4Z" kind="show" id="Dua-Ed-lgA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -35,6 +40,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb3-sj-jj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="549"/>
+        </scene>
+        <!--Weather Data Detail View Controller-->
+        <scene sceneID="bA4-Xb-yOe">
+            <objects>
+                <viewController id="zmj-lN-K4Z" customClass="WeatherDataDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Stb-RW-QJS"/>
+                        <viewControllerLayoutGuide type="bottom" id="LKa-TL-ssU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qka-S7-HVl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6D6-EA-ttf">
+                                <rect key="frame" x="180" y="124" width="240" height="134"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obV-1A-g14">
+                                <rect key="frame" x="211" y="285" width="178" height="30"/>
+                                <state key="normal" title="click here for more details"/>
+                                <connections>
+                                    <segue destination="vUQ-RG-YyV" kind="show" id="s6o-xP-DxG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvK-Qm-F5U">
+                                <rect key="frame" x="274" y="266" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MvK-Qm-F5U" firstAttribute="leading" secondItem="qka-S7-HVl" secondAttribute="leading" constant="274" id="2JV-6t-oy1"/>
+                            <constraint firstItem="obV-1A-g14" firstAttribute="centerY" secondItem="qka-S7-HVl" secondAttribute="centerY" id="5Qt-Uu-Og1"/>
+                            <constraint firstAttribute="trailing" secondItem="MvK-Qm-F5U" secondAttribute="trailing" constant="284" id="F5B-2a-FGA"/>
+                            <constraint firstItem="LKa-TL-ssU" firstAttribute="top" secondItem="MvK-Qm-F5U" secondAttribute="bottom" constant="313" id="JfV-ta-52l"/>
+                            <constraint firstItem="MvK-Qm-F5U" firstAttribute="top" secondItem="6D6-EA-ttf" secondAttribute="bottom" constant="8" id="VSn-7f-Qph"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6D6-EA-ttf" secondAttribute="trailing" constant="160" id="eSq-Cd-rgc"/>
+                            <constraint firstItem="obV-1A-g14" firstAttribute="centerX" secondItem="qka-S7-HVl" secondAttribute="centerX" id="o0B-0X-mUn"/>
+                            <constraint firstItem="6D6-EA-ttf" firstAttribute="top" secondItem="Stb-RW-QJS" secondAttribute="bottom" constant="60" id="sZa-k9-Zy7"/>
+                            <constraint firstItem="obV-1A-g14" firstAttribute="top" secondItem="6D6-EA-ttf" secondAttribute="bottom" constant="27" id="wQO-xI-yPK"/>
+                            <constraint firstItem="6D6-EA-ttf" firstAttribute="leading" secondItem="qka-S7-HVl" secondAttribute="leadingMargin" constant="160" id="xHd-8e-h8t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="weatherImageView" destination="6D6-EA-ttf" id="Rq3-r4-djQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sif-2T-tn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="549"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tJm-6w-1Wz">
+            <objects>
+                <viewController id="vUQ-RG-YyV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXc-9o-MRf"/>
+                        <viewControllerLayoutGuide type="bottom" id="aCs-5d-A42"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Znp-Wt-Xsh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7AQ-sQ-YKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nF4-wf-tk0">

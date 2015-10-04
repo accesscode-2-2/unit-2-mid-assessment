@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface WeatherData : NSObject
+//@property (nonatomic) NSDictionary *allData;
+@property (nonatomic) NSDictionary *name;
+@property (nonatomic) NSString *imageURLString;
+
+
 
 + (NSArray *)allData;
 
