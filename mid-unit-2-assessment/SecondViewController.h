@@ -10,4 +10,7 @@
 
 @interface SecondViewController : UIViewController
 
+//@property (nonatomic) NSDictionary *allWeatherData;
+@property (nonatomic) NSDictionary *lastWeatherData;
+
 @end

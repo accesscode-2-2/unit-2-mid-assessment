@@ -7,8 +7,13 @@
 //
 
 #import "SecondViewController.h"
+#import "FirstViewController.h"
 
 @interface SecondViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *labelOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
+@property (weak, nonatomic) IBOutlet UILabel *labelThree;
+//@property (nonatomic) NSInteger number;
 
 @end
 
@@ -16,7 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+//    NSString *string = [NSString stringWithFormat:@"%@", number];
+    self.labelOne.text = [self.lastWeatherData objectForKey:@"summary"];
+    self.labelTwo.text = [self.lastWeatherData objectForKey:@"summary"];
+    self.labelThree.text = [self.lastWeatherData objectForKey:@"summary"];
+
 }
 
 - (void)didReceiveMemoryWarning {
