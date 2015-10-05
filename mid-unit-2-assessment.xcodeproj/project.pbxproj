@@ -14,6 +14,8 @@
 		8D4C4DFF1BC16F9900461862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4C4DFD1BC16F9900461862 /* Main.storyboard */; };
 		8D4C4E011BC16F9900461862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4C4E001BC16F9900461862 /* Assets.xcassets */; };
 		8D4C4E041BC16F9900461862 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4C4E021BC16F9900461862 /* LaunchScreen.storyboard */; };
+		A45856211BC1A837002FD8CE /* WeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45856201BC1A837002FD8CE /* WeatherDetailViewController.m */; };
+		A45856241BC1A975002FD8CE /* MoreWeatherDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A45856231BC1A975002FD8CE /* MoreWeatherDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		8D4C4E001BC16F9900461862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D4C4E031BC16F9900461862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D4C4E051BC16F9900461862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A458561F1BC1A837002FD8CE /* WeatherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailViewController.h; sourceTree = "<group>"; };
+		A45856201BC1A837002FD8CE /* WeatherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailViewController.m; sourceTree = "<group>"; };
+		A45856221BC1A975002FD8CE /* MoreWeatherDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeatherDetails.h; sourceTree = "<group>"; };
+		A45856231BC1A975002FD8CE /* MoreWeatherDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreWeatherDetails.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				8D0E37CB1BC1994A004A3B46 /* WeatherData.m */,
 				8D0E37CD1BC19985004A3B46 /* WeatherTableViewController.h */,
 				8D0E37CE1BC19985004A3B46 /* WeatherTableViewController.m */,
+				A458561F1BC1A837002FD8CE /* WeatherDetailViewController.h */,
+				A45856201BC1A837002FD8CE /* WeatherDetailViewController.m */,
+				A45856221BC1A975002FD8CE /* MoreWeatherDetails.h */,
+				A45856231BC1A975002FD8CE /* MoreWeatherDetails.m */,
 				8D4C4DFD1BC16F9900461862 /* Main.storyboard */,
 				8D4C4E001BC16F9900461862 /* Assets.xcassets */,
 				8D4C4E021BC16F9900461862 /* LaunchScreen.storyboard */,
@@ -154,7 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45856241BC1A975002FD8CE /* MoreWeatherDetails.m in Sources */,
 				8D4C4DF91BC16F9900461862 /* AppDelegate.m in Sources */,
+				A45856211BC1A837002FD8CE /* WeatherDetailViewController.m in Sources */,
 				8D0E37CC1BC1994A004A3B46 /* WeatherData.m in Sources */,
 				8D0E37CF1BC19985004A3B46 /* WeatherTableViewController.m in Sources */,
 				8D4C4DF61BC16F9900461862 /* main.m in Sources */,

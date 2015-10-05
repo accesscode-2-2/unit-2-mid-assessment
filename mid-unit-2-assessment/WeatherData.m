@@ -10,6 +10,13 @@
 
 @implementation WeatherData
 
+
+
+
+
+
+    
+    
 + (NSArray *)allData {
     NSArray *info = @[
                       @{
@@ -235,5 +242,10 @@
                       ];
     return info;
 }
+    
+
+    
+    
+    
 
 @end

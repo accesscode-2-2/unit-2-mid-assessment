@@ -10,6 +10,9 @@
 
 @interface WeatherData : NSObject
 
+@property (nonatomic) NSDictionary *name;
+
 + (NSArray *)allData;
+
 
 @end
