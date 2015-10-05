@@ -12,4 +12,7 @@
 
 @property (nonatomic) NSString *weatherName;
 
+//@property (nonatomic) WeatherData *allData;
+
+
 @end

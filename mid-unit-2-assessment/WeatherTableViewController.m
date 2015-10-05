@@ -13,8 +13,8 @@
 @interface WeatherTableViewController ()
 
 // created a property to access the class WeatherData
-@property (nonatomic) WeatherData *weatherData;
-@property (nonatomic)NSMutableArray *weather;
+@property (nonatomic) WeatherData *allWeatherData;
+
 
 
 
@@ -25,22 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    self.weatherData = [[WeatherData alloc]init];
-//    [self.weather allData];
-    
-    self.navigationItem.title = @"Weather";
-    
-    self.weather = [[NSMutableArray alloc] init];
-
-    for (NSString *name in [WeatherData allData]) {
-        WeatherData *weather = [[WeatherData alloc]init];
-        weather.name = name;
-        [self.weather addObject:weather];
-    
-        
-    }
-    
 }
 
 
@@ -48,30 +32,9 @@
 
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    
-    // what we're passing
-    NSString *weather = self.weather[selectedIndexPath.row];
-    
-    // where we're passing it
-    WeatherDetailViewController *viewController = segue.destinationViewController;
-    
-    // pass it!
-    viewController.weatherName = weather;
     
     
     
-    
-    
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
-    NSString *weatherName = [self objectForIndexPath:indexPath];
-    
-    WeatherTableViewController *detailViewController = segue.destinationViewController;
-    detailViewController.weatherName = [weatherName capitalizedString];
-}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -79,12 +42,16 @@
     
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-//    return self.weatherData allData.count;
+    NSArray *keys = [WeatherData allData];
     
-    return self.weather.count;
+    return keys.count;
 }
+
+
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,38 +62,37 @@
     cell.textLabel.text = weatherData[@"summary"];
     cell.detailTextLabel.text = [[NSDate dateWithTimeIntervalSince1970:[weatherData[@"time"] doubleValue]] description];
     
-//    cell.textLabel.text = self.weatherData[indexPath.row];
-//    //cell.textLabel.text = self.weather[indexPath.row];
-//    weatherData *weather = [self.countries objectAtIndex:indexPath.row];
-//    
-//    cell.textLabel.text = country.name;
-//    cell.imageView.image = [country image];
+
     
-    
-    
-//    
-//    for (NSString *name in [WeatherData allData]) {
-//        WeatherData *weather = [[WeatherData alloc]init];
-//        weather.name = name;
-//        [self.weather addObject:weather];
-//        
-//        // initialize the data in self.countries
-//        for (NSString *name in [WFCountry allCountries]) {
-//            WFCountry *country = [[WFCountry alloc] init];
-//            country.name = name;
-//            country.imageURLString = [[name lowercaseString] stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-//            [self.countries addObject:country];
-//        }
-    
-    
-    
-    
-    
- 
     
     return cell;
 }
 
 
+
+#pragma mark - Navigation
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    NSDictionary *myWeatherData = [WeatherData allData][indexPath.row];
+    
+    WeatherTableViewController *vc = segue.destinationViewController;
+    vc.allWeatherData = myWeatherData;
+    
+    
+    
+}
+
+
+
+
+- (NSString *)objectForIndexPath:(NSIndexPath *)indexPath {
+    
+    NSArray *keys = [WeatherData allData];
+    
+    return keys[indexPath.row];
+}
 
 @end

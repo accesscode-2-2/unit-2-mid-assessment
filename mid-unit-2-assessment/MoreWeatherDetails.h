@@ -10,5 +10,7 @@
 
 @interface MoreWeatherDetails : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *weatherForcastLabel;
+@property (nonatomic) NSDictionary *allWeatherData;
+@property (nonatomic) NSDictionary *finalForcast;
 
 @end

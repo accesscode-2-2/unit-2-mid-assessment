@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *weatherStatus;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherView;
+@property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
 @property (weak, nonatomic) IBOutlet UIButton *WeatherDetailButton;
 
-@property (nonatomic) NSString *weatherName;
+@property (nonatomic) NSDictionary *allWeatherData;
 
 @end

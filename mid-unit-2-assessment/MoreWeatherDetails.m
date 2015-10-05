@@ -7,7 +7,33 @@
 //
 
 #import "MoreWeatherDetails.h"
+#import "WeatherDetailViewController.h"
+
+@interface MoreWeatherDetails ()
+
+
+@property (weak, nonatomic) IBOutlet UILabel *labelOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
+@property (weak, nonatomic) IBOutlet UILabel *labelThree;
+
+
+@end
+
+
+
+
 
 @implementation MoreWeatherDetails
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 @end
