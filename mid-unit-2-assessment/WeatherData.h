@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface WeatherData : NSObject
+
+@property (nonatomic) NSDictionary *name;
+@property (nonatomic) NSString *imageString;
+
+- (UIImage *)image;
 
 + (NSArray *)allData;
 
