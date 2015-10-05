@@ -9,6 +9,7 @@
 #import "WeatherViewController.h"
 #import "WeatherData.h"
 #import "WeatherTableViewController.h"
+#import "WeatherSummaryViewController.h"
 
 @interface WeatherViewController ()
 
@@ -24,10 +25,19 @@
     
     NSString *imageName = self.weatherData.name [@"icon"];
     self.weatherImageView.image = [UIImage imageNamed:imageName];
-
-//    self.weatherImageView.image = [_weatherData.name objectForKey:@"icon"];
+    
     self.weatherLabel.text = [_weatherData.name objectForKey:@"summary"];
-//    self.label = [_weatherData.name objectForKey:@"summary"];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // access the destinationViewController
+    WeatherSummaryViewController *vc = segue.destinationViewController;
+    
+    //set the forecast property on the destinationViewController
+    vc.weatherData = self.weatherData;
+    
+}
+
 
 @end
